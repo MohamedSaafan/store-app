@@ -9,7 +9,7 @@ import {
   Link
 } from "react-router-dom";
 import {Home} from './Pages/Home'
-import {Cart} from './Pages/Cart'
+import Cart from './Pages/Cart'
 import {Products} from './Pages/Products'
 import {Product} from './Pages/Product'
 import ActiveItem from './Components/activeItem';

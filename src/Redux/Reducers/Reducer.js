@@ -7,6 +7,7 @@ export const setActive = (state = 0, action)=> {
         
     return state;
 }
+// making cart reducer
 export const cart = (state = [], action)=> {
     switch (action.type){
         case ADDITEMTOCART:

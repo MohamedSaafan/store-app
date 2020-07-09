@@ -5,4 +5,13 @@ export const action =(id)=>( {
     payload: {
         id
     }
-})
+}); 
+export const addToCart = (id, numberOfItems)=>{
+    return{
+        type: ADDITEMTOCART,
+        payload: {
+            id,
+            numberOfItems
+        }
+    }
+}

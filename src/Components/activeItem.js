@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import {action} from '../Redux/Actions/SETACTIVE'
+import {action, addToCart} from '../Redux/Actions/SETACTIVE'
 import {getById} from '../api/products'
+import { Link } from 'react-router-dom';
 
 const ActiveItem = (props)=>{
     const [id,setActiveId] = useState({});
@@ -15,7 +16,9 @@ const ActiveItem = (props)=>{
                 <div className="card-body">
                 <h5 className="card-title">{id.title}</h5>
                 <p className="card-text"> price {id.price}.0$</p>
-                <button className = 'btn btn-primary '>Add To Card</button>
+                < button className = 'btn btn-secondary ' onClick = {()=> props.addOne(props.match.params.id)}>
+                  <Link to = '/cart' > Add To Card </Link>  
+                </button>
                 </div>
             </div>
     </div>
@@ -28,4 +31,9 @@ const mapStateToProps = (state)=>{
     })
 
 }
-export default connect(mapStateToProps,null)(ActiveItem);
+const mapDispatchToProps = dispatch => {
+    return{
+        addOne: (id)=> dispatch(addToCart(id, 1))
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(ActiveItem);
