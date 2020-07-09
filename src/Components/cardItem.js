@@ -3,11 +3,15 @@ import { getById } from '../api/products';
 
 const CartItem = props => {
     const {id, numberOfItems} = props;
-    const [item, setItem] = useState([]);
+    const [item, setItem] = useState(null);
     useEffect(()=>{
         getById(id).then(item => setItem(item));
     },[]);
     const renderTheItem = () => {
+        if(!item){
+            return <h1> you havn't any products yet</h1>
+        }
+
         return (
             
             <div className="card col-4 " >

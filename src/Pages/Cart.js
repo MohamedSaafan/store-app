@@ -8,7 +8,7 @@ const Cart = (props)=>{
     const renderItems = () => {
       return  cart.map(item => {
             return(
-                <CartItem id = {item.id} numberOfItems = {item.numberOfItems} />
+                <CartItem id = {item.id} numberOfItems = {item.numberOfItems} key = {item.id}/>
                 );
         })
     }
