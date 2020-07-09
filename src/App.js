@@ -38,11 +38,10 @@ function App(props) {
               </ul>
             </div>
         </nav>
-        {JSON.stringify(props)}
         
         <Route path = '/' component = {Home} exact />
         <Route path = '/products' component = {Products} exact />
-        <Route path = {`/products/${props.activeId}`} component = {()=><ActiveItem activeId = {props.activeId} />}/>
+        <Route path = {`/products/:id`} component = {ActiveItem}/>
         <Route path = '/card' component = {Card} />
       
       </div>

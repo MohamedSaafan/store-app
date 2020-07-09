@@ -11,7 +11,7 @@ const ProductItem = (props)=>{
         <div className="card-body">
         <h5 className="card-title">{props.title}</h5>
             <p className="card-text"> price {props.price}.0$</p>
-            <Link to={`/products/${props.LinkctiveId}`} onClick= {()=>props.setActive(props.id)} className="btn btn-primary">Details</Link>
+            <Link to={`/products/${props.id}`} onClick= {()=>props.setActive(props.id)} className="btn btn-primary">Details</Link>
         </div>
     </div>
     );

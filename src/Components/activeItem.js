@@ -4,12 +4,12 @@ import {action} from '../Redux/Actions/SETACTIVE'
 import {getById} from '../api/products'
 
 const ActiveItem = (props)=>{
-    const [activeId,setActiveId] = useState(1);
+    const [activeId,setActiveId] = useState({});
     
-    getById(props.activeId).then(item=>setActiveId(item)); 
+    getById(props.match.params.id).then(item=> setActiveId(item)); 
     return(
         <div>
-            {JSON.stringify(activeId)} <h1>from active Item</h1>
+            <h1>from active Item</h1>
             <div className="card col-4 " >
                 <img src={activeId.image} className="card-img-top" alt="..."/>
                 <div className="card-body">
