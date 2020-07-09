@@ -1,8 +1,7 @@
 import {SETACTIVE} from '../Actions/SETACTIVE'
-export const reducer = (state = {activeId:1},action)=>{
+export const setActive = (state = 0, action)=>{
     if(action.type === SETACTIVE){
-        console.log('hi from the Reducer');
-        return {activeId : action.id};
+        return action.payload.id ;
     }
         
     return state;

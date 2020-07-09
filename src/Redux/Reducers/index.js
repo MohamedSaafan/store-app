@@ -1,5 +1,6 @@
-import {reducer} from './Reducer'
-import {combineReducers} from 'redux'
+import {setActive} from './Reducer'
+import {combineReducers} from 'redux';
+
  export default combineReducers ({
-    activeId :reducer,
+    activeId :setActive,
 });

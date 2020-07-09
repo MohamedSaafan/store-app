@@ -1,4 +1,11 @@
 import rootreducer from './Reducers/index';
-import {createStore} from 'redux'
-import {reducer} from './Reducers/Reducer'
-export const store = createStore(reducer);
+import { createStore, applyMiddleware, compose } from 'redux';
+import reducer from './Reducers/';
+
+ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+export  const store = createStore(
+     reducer,
+    composeEnhancers(
+    applyMiddleware()
+  ));
+
