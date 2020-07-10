@@ -6,12 +6,13 @@ export const action =(id)=>( {
         id
     }
 }); 
-export const addToCart = (id, numberOfItems)=>{
+export const addToCart = (id, numberOfItems, price)=>{
     return{
         type: ADDITEMTOCART,
         payload: {
             id,
-            numberOfItems
+            numberOfItems,
+            price
         }
     }
 }

@@ -11,6 +11,7 @@ const CartItem = props => {
         if(!item){
             return <h1> you havn't any products yet</h1>
         }
+        const itemTotalPrice = item.price * numberOfItems;
 
         return (
             
@@ -19,7 +20,7 @@ const CartItem = props => {
                 <img src={item.image} className="card-img-top" alt="..."/>
                 <div className="card-body">
                 <h5 className="card-title">{item.title}</h5>
-                <p className="card-text"> the total price for the number of items is: {item.price * numberOfItems}.0$</p>
+                <p className="card-text"> the total price for the number of items is: {itemTotalPrice}.0$</p>
                 </div>
              </div>
         )

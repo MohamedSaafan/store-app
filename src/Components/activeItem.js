@@ -16,7 +16,7 @@ const ActiveItem = (props)=>{
                 <div className="card-body">
                 <h5 className="card-title">{id.title}</h5>
                 <p className="card-text"> price {id.price}.0$</p>
-                < button className = 'btn btn-secondary ' onClick = {()=> props.addOne(props.match.params.id)}>
+                < button className = 'btn btn-secondary ' onClick = {()=> props.addOne(props.match.params.id, id.price)}>
                   <Link to = '/cart' > Add To Card </Link>  
                 </button>
                 </div>
@@ -33,7 +33,7 @@ const mapStateToProps = (state)=>{
 }
 const mapDispatchToProps = dispatch => {
     return{
-        addOne: (id)=> dispatch(addToCart(id, 1))
+        addOne: (id, price )=> dispatch(addToCart(id, 1, price))
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(ActiveItem);

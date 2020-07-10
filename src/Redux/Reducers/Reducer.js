@@ -27,3 +27,11 @@ export const cart = (state = [], action)=> {
             return state;
     }
 }
+export const totalPrice = (state = 0, action) => {
+    switch ( action.type){
+        case ADDITEMTOCART:
+            return  state + action.payload.price;
+        default:
+            return state;
+    }
+}
