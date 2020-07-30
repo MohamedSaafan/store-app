@@ -1,11 +1,5 @@
-import rootreducer from './Reducers/index';
-import { createStore, applyMiddleware, compose } from 'redux';
-import reducer from './Reducers/';
+import { createStore, applyMiddleware, compose } from "redux";
+import reducer from "./Reducers/";
 
- const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-export  const store = createStore(
-     reducer,
-    composeEnhancers(
-    applyMiddleware()
-  ));
-
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+export const store = createStore(reducer, composeEnhancers(applyMiddleware()));
